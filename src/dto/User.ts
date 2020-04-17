@@ -1,18 +1,19 @@
 import { Room } from './Room';
 
 export interface User {
+  id?: number;
   nickname: string;
-  credential?: string;
   rooms?: Room[];
 }
 
 export interface CheckinResponse {
   result: CheckinResponseStatus;
-  credential?: string;
+  token?: string;
 }
 
 export enum CheckinResponseStatus {
   Success = 'success',
-  badNickname = 'badnickname',
+  BadNickname = 'badnickname',
+  Exception = 'exception',
   // NicknameInUse = 'nicknameinuse',  // TODO(JasonHarrison) are we checking for dups?
 }

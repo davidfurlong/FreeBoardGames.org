@@ -7,3 +7,13 @@ export interface Room {
   unlisted: boolean;
   users?: User[];
 }
+
+export interface NewRoomResponse {
+  result: NewRoomResponseStatus;
+}
+
+export enum NewRoomResponseStatus {
+  Success = 'success',
+  Exception = 'exception',
+  // NicknameInUse = 'nicknameinuse',  // TODO(JasonHarrison) are we checking for dups?
+}
